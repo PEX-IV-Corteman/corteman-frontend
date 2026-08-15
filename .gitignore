@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Production build output
+dist/
+
+# TypeScript build metadata and emitted config artifacts
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor and operating system files
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
