@@ -67,6 +67,6 @@ export const api = {
 
   listRetiradas: () => request<Retirada[]>('/retiradas'),
   createRetirada: (data: Pick<Retirada, 'valor_retirada' | 'destino' | 'justificativa'>) => request<Retirada>('/retiradas', json('POST', data)),
-  updateRetirada: (id: string, data: Partial<Pick<Retirada, 'valor_retirada' | 'justificativa' | 'realizada_em'>>) => request<Retirada>(`/retiradas/${id}`, json('PUT', data)),
+  updateRetirada: (id: string, data: Partial<Pick<Retirada, 'valor_retirada' | 'destino' | 'justificativa' | 'realizada_em'>>) => request<Retirada>(`/retiradas/${id}`, json('PUT', data)),
   deleteRetirada: (id: string) => request<null>(`/retiradas/${id}`, { method: 'DELETE' }),
 }
