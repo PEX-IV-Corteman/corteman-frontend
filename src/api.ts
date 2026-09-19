@@ -30,7 +30,9 @@ export type Retirada = {
   realizada_em: string
 }
 
-const baseUrl = (import.meta.env.VITE_API_URL ?? '').replace(/\/$/, '')
+// Em desenvolvimento, o proxy do Vite evita depender da configuração de CORS
+// do servidor remoto. Em produção, VITE_API_URL continua sendo a fonte da URL.
+const baseUrl = (import.meta.env.VITE_API_URL ?? (import.meta.env.DEV ? '/api' : '')).replace(/\/$/, '')
 
 function messageFrom(response: ApiResponse<unknown>) {
   return response.errors?.flatMap(error => error.messages).join(' ') || response.message || 'Não foi possível concluir a operação.'
